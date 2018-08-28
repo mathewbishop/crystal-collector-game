@@ -1,9 +1,9 @@
 // target number between 19-120 
 // crystal numbers between 1-12
 
-// generate target number (random each time)
-// generate crystal values (random each time)
-// assign each crystal a random value each time
+// generate target number (random each time)    √
+// generate crystal values (random each time)   √
+// assign each crystal a random value each time     √
 // on click, crystal adds value to current score
 // if current score === target number, add to wins counter, else, add to losses counter
 // restart game without refreshing the page, keeps wins and losses totals
@@ -13,9 +13,9 @@ $(document).ready(function() {
 // global var
 // data containers
 var targetNumber = $('#target-number');
-var wins = $('#wins-text');
-var losses = $('#losses-text');
-var currentScore = $('#current-score');
+var wins = 0;
+var losses = 0;
+var currentScore = 0;
 
 // crystal buttons
 var blueCrystal = $('#crystal-blue');
@@ -35,7 +35,13 @@ function newRound() {
         whiteCrystal.val(crystalRandomNumber);
     }
 
+newRound();
 
+blueCrystal.on('click', function() {
+    (currentScore = parseFloat(currentScore) + parseFloat($(this).val()));
+    console.log(currentScore);
+    
+})
     
 
 
