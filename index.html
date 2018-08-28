@@ -14,26 +14,28 @@
     <title>Crystal Collector</title>
 </head>
 <body>
-    <div id="title">
-        <h1>Crystal Collector</h1>
-    </div>
-    <div id="directions">
+    <header>
+        <h1>Crystal Collector</h1>          <!--header (game title)-->
+    </header>
+    <div id="directions-text">              <!--instructions for play-->
         <p>A random target number will be generated at the start of the game.<br>Click on the crystals below to add to your total score.<br>Win the game by matching your score to the target number. Don't score greater than the target number or you lose.<br>The value of each crystal is hidden until you click on it.<br>The target number and the crystal values will change each game.</p>
     </div>
-    <div id="target-number">
-
+    <div>       <!--container for target number-->
+        <h2 id="target-number"></h2>
     </div>
-    <div id="wins-losses">
-
+    <div id="wins-losses">  <!--div containing the running total of wins and losses-->
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
     </div>
     <div id="crystals">
-        <img id="crystal-1"></img>
-        <img id="crystal-2"></img>
-        <img id="crystal-3"></img>
-        <img id="crystal-4"></img>
+        <img id="crystal-blue" class="crystal btn" src="assets/images/bluecrystal.svg"></img>
+        <img id="crystal-red" class="crystal btn" src="assets/images/redcrystal.svg"></img>
+        <img id="crystal-yellow" class="crystal btn" src="assets/images/yellowcrystal.svg"></img>
+        <img id="crystal-white" class="crystal btn" src="assets/images/whitecrystal.svg"></img>
     </div>
-    <div id="current-score">
-
+    <h2>Current Score:</h2>
+    <div class="w-25 bg-primary">  <!--div containing current score-->
+        <h2 id="current-score"></h2>
     </div>
 </body>
 </html>
