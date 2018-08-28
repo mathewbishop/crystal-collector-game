@@ -4,8 +4,8 @@
 // generate target number (random each time)    √
 // generate crystal values (random each time)   √
 // assign each crystal a random value each time     √
-// on click, crystal adds value to current score
-// if current score === target number, add to wins counter, else, add to losses counter
+// on click, crystal adds value to current score  √
+// if current score === target number, add to wins counter. if >, add to losses counter    
 // restart game without refreshing the page, keeps wins and losses totals
 
 $(document).ready(function() {
@@ -56,6 +56,22 @@ whiteCrystal.on('click', function() {
     (currentScore = parseInt(currentScore) + parseInt($(this).val()));
     $('#current-score').html(currentScore);
 })
+
+if (currentScore === targetRandomNumber) {
+    ++wins;
+    alert('You win this round!');
+    newRound();
+}
+
+if (currentScore > targetRandomNumber) {
+    ++losses;
+    alert('You lost this round');
+    newRound();
+}
+
+$('#wins-text').html(wins);
+$('#losses-text').html(losses);
+
 
 
 });
