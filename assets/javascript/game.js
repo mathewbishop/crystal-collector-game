@@ -38,13 +38,24 @@ function newRound() {
 newRound();
 
 blueCrystal.on('click', function() {
-    (currentScore = parseFloat(currentScore) + parseFloat($(this).val()));
-    console.log(currentScore);
-    
+    (currentScore = parseInt(currentScore) + parseInt($(this).val()));
+    $('#current-score').html(currentScore);
 })
     
+redCrystal.on('click', function() {
+    (currentScore = parseInt(currentScore) + parseInt($(this).val()));
+    $('#current-score').html(currentScore);
+})
 
+yellowCrystal.on('click', function() {
+    (currentScore = parseInt(currentScore) + parseInt($(this).val()));
+    $('#current-score').html(currentScore);
+})
 
+whiteCrystal.on('click', function() {
+    (currentScore = parseInt(currentScore) + parseInt($(this).val()));
+    $('#current-score').html(currentScore);
+})
 
 
 });
