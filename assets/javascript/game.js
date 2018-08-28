@@ -10,29 +10,34 @@
 
 $(document).ready(function() {
 
-    // global var
-    // data containers
-  var targetNumber = $('#target-number');
-  var wins = $('#wins-text');
-  var losses = $('#losses-text');
-  var currentScore = $('#current-score');
+// global var
+// data containers
+var targetNumber = $('#target-number');
+var wins = $('#wins-text');
+var losses = $('#losses-text');
+var currentScore = $('#current-score');
 
-  // crystal buttons
-  var blueCrystal = $('#crystal-blue');
-  var redCrystal = $('#crystal-red');
-  var yellowCrystal = $('#crystal-yellow');
-  var whiteCrystal = $('#crystal-white');
+// crystal buttons
+var blueCrystal = $('#crystal-blue');
+var redCrystal = $('#crystal-red');
+var yellowCrystal = $('#crystal-yellow');
+var whiteCrystal = $('#crystal-white');
 
-  // random number generators
-  var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
-  var crystalRandomNumber = Math.floor(Math.random() *12) + 1;
+// random number generators
+var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
+var crystalRandomNumber = Math.floor(Math.random() *12) + 1;
     
-    function newRound() {
+function newRound() {
         targetNumber.text(targetRandomNumber);
+        blueCrystal.val(crystalRandomNumber);
+        redCrystal.val(crystalRandomNumber);
+        yellowCrystal.val(crystalRandomNumber);
+        whiteCrystal.val(crystalRandomNumber);
     }
 
+
     
-    
+
 
 
 
