@@ -26,7 +26,12 @@ $(document).ready(function() {
   // random number generators
   var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
   var crystalRandomNumber = Math.floor(Math.random() *12) + 1;
-  
+    
+    function newRound() {
+        targetNumber.text(targetRandomNumber);
+    }
+
+    
     
 
 
