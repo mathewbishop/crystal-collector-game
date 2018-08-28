@@ -25,14 +25,14 @@ var whiteCrystal = $('#crystal-white');
 
 // random number generators
 var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
-var crystalRandomNumber = Math.floor(Math.random() *12) + 1;
+//var crystalRandomNumber = Math.floor(Math.random() *12) + 1;
     
 function newRound() {
         targetNumber.text(targetRandomNumber);
-        blueCrystal.val(crystalRandomNumber);
-        redCrystal.val(crystalRandomNumber);
-        yellowCrystal.val(crystalRandomNumber);
-        whiteCrystal.val(crystalRandomNumber);
+        blueCrystal.val(Math.floor(Math.random() *12) + 1);
+        redCrystal.val(Math.floor(Math.random() *12) + 1);
+        yellowCrystal.val(Math.floor(Math.random() *12) + 1);
+        whiteCrystal.val(Math.floor(Math.random() *12) + 1);
     }
 
 newRound();
