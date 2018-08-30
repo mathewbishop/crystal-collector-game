@@ -25,12 +25,6 @@ console.log(targetNumber, "target number");
 // dispalys targetNumber in the DOM
 $('#target-number').html(targetNumber);
 
-// adds to currentScore
-function addToScore () {
-    currentScore = currentScore + parseInt(($(this).val()));
-    console.log(currentScore, "current score");
-}
-
 // dynamic creation of crystals and crystal values
 var blueCrystal = $('<img>');
     blueCrystal.addClass('btn crystal-image');
@@ -66,16 +60,17 @@ var whiteCrystal = $('<img>');
 
 // adds crystal value to currentScore by running function addToScore()
 $('.crystal-image').on('click', function() {
-    if (currentScore > targetNumber) {
-        console.log('loss')
+    currentScore = currentScore + parseInt(($(this).val()));
+    $('#current-score').html(currentScore);
+    if ((currentScore) > (targetNumber)) {
+        alert('You lose this round');
     }
-
+    console.log(currentScore, "current score");
 });
 // displays currentScore in the DOM 
-$('#current-score').html(currentScore);
+
 
 
 
 console.log(currentScore, "outside click event");
 });
-
