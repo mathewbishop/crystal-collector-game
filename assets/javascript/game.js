@@ -28,13 +28,15 @@ var whiteCrystal = $('#crystal-white');
 var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
     
 function newRound() {
+        var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
         targetNumber.html(targetRandomNumber);
-        console.log(targetRandomNumber);
         blueCrystal.val(Math.floor(Math.random() *12) + 1);
         redCrystal.val(Math.floor(Math.random() *12) + 1);
         yellowCrystal.val(Math.floor(Math.random() *12) + 1);
         whiteCrystal.val(Math.floor(Math.random() *12) + 1);
+        var currentScore = 0;
     }
+
 newRound();
 
 blueCrystal.on('click', function() {
@@ -43,6 +45,7 @@ blueCrystal.on('click', function() {
     if (currentScore === targetRandomNumber) {
         ++wins;
         alert('You won this round');
+        newRound();
     }
     
     if (currentScore > targetRandomNumber) {
@@ -50,27 +53,65 @@ blueCrystal.on('click', function() {
         alert('You lost this round');
         newRound();
     }
-})
+    $('#wins-text').html(wins);
+    $('#losses-text').html(losses);
+});
     
 redCrystal.on('click', function() {
     (currentScore = parseInt(currentScore) + parseInt($(this).val()));
     $('#current-score').html(currentScore);
-})
+    if (currentScore === targetRandomNumber) {
+        ++wins;
+        alert('You won this round');
+        newRound();
+    }
+    
+    if (currentScore > targetRandomNumber) {
+        ++losses;
+        alert('You lost this round');
+        newRound();
+    }
+    $('#wins-text').html(wins);
+    $('#losses-text').html(losses);
+});
 
 yellowCrystal.on('click', function() {
     (currentScore = parseInt(currentScore) + parseInt($(this).val()));
     $('#current-score').html(currentScore);
-})
+    if (currentScore === targetRandomNumber) {
+        ++wins;
+        alert('You won this round');
+        newRound();
+    }
+    
+    if (currentScore > targetRandomNumber) {
+        ++losses;
+        alert('You lost this round');
+        newRound();
+    }
+    $('#wins-text').html(wins);
+    $('#losses-text').html(losses);
+});
 
 whiteCrystal.on('click', function() {
     (currentScore = parseInt(currentScore) + parseInt($(this).val()));
     $('#current-score').html(currentScore);
-})
+    if (currentScore === targetRandomNumber) {
+        ++wins;
+        alert('You won this round');
+        newRound();
+    }
+    
+    if (currentScore > targetRandomNumber) {
+        ++losses;
+        alert('You lost this round');
+        newRound();
+    }
+    $('#wins-text').html(wins);
+    $('#losses-text').html(losses);
+});
 
 
-
-$('#wins-text').html(wins);
-$('#losses-text').html(losses);
 
 
 });
