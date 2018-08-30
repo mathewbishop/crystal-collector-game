@@ -5,9 +5,11 @@
 // generate the crystal buttons/images dynamically √
 // generate crystal values (random each time)   √
 // assign each crystal a random value each time     √
-// on click, crystal adds value to current score  
+// on click, crystal adds value to current score  √
 // if current score === target number, add to wins counter. if >, add to losses counter    
 // restart game without refreshing the page, keeps wins and losses totals
+
+
 
 
 
@@ -54,6 +56,11 @@ var whiteCrystal = $('<img>');
     $('#crystals').append(whiteCrystal);
     console.log(whiteCrystal);
 
+
+$('.crystal-image').on('click', function() {
+    currentScore = (parseInt(currentScore) + parseInt(($(this).val())));
+    console.log(currentScore, "current score")
+})
 
 
 
