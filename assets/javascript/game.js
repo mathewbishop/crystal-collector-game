@@ -8,10 +8,12 @@
 // if current score === target number, add to wins counter. if >, add to losses counter    
 // restart game without refreshing the page, keeps wins and losses totals
 
+
+
+
+
 $(document).ready(function() {
 
-// global var
-// data containers
 var targetNumber = $('#target-number');
 var wins = 0;
 var losses = 0;
@@ -23,23 +25,31 @@ var redCrystal = $('#crystal-red');
 var yellowCrystal = $('#crystal-yellow');
 var whiteCrystal = $('#crystal-white');
 
-// random number generators
 var targetRandomNumber = Math.floor(Math.random() * 120) + 19;
-//var crystalRandomNumber = Math.floor(Math.random() *12) + 1;
     
 function newRound() {
-        targetNumber.text(targetRandomNumber);
+        targetNumber.html(targetRandomNumber);
+        console.log(targetRandomNumber);
         blueCrystal.val(Math.floor(Math.random() *12) + 1);
         redCrystal.val(Math.floor(Math.random() *12) + 1);
         yellowCrystal.val(Math.floor(Math.random() *12) + 1);
         whiteCrystal.val(Math.floor(Math.random() *12) + 1);
     }
-
 newRound();
 
 blueCrystal.on('click', function() {
     (currentScore = parseInt(currentScore) + parseInt($(this).val()));
     $('#current-score').html(currentScore);
+    if (currentScore === targetRandomNumber) {
+        ++wins;
+        alert('You won this round');
+    }
+    
+    if (currentScore > targetRandomNumber) {
+        ++losses;
+        alert('You lost this round');
+        newRound();
+    }
 })
     
 redCrystal.on('click', function() {
@@ -57,21 +67,10 @@ whiteCrystal.on('click', function() {
     $('#current-score').html(currentScore);
 })
 
-if (currentScore === targetRandomNumber) {
-    ++wins;
-    alert('You win this round!');
-    newRound();
-}
 
-if (currentScore > targetRandomNumber) {
-    ++losses;
-    alert('You lost this round');
-    newRound();
-}
 
 $('#wins-text').html(wins);
 $('#losses-text').html(losses);
-
 
 
 });
