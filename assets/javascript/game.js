@@ -14,16 +14,24 @@
 
 
 
-
 $(document).ready(function() {
 // generate random target number between 19-120
 var targetNumber = Math.floor(Math.random() * 102) + 19;
+// sets the var currentScore to 0
+var currentScore = 0;    
+
 console.log(targetNumber, "target number");
 
-$('#target-number').text(targetNumber);
+// dispalys targetNumber in the DOM
+$('#target-number').html(targetNumber);
 
-var currentScore = 0;
+// adds to currentScore
+function addToScore () {
+    currentScore = currentScore + parseInt(($(this).val()));
+    console.log(currentScore, "current score");
+}
 
+// dynamic creation of crystals and crystal values
 var blueCrystal = $('<img>');
     blueCrystal.addClass('btn crystal-image');
     blueCrystal.attr("src", "assets/images/bluecrystal.svg");
@@ -56,13 +64,18 @@ var whiteCrystal = $('<img>');
     $('#crystals').append(whiteCrystal);
     console.log(whiteCrystal);
 
-
+// adds crystal value to currentScore by running function addToScore()
 $('.crystal-image').on('click', function() {
-    currentScore = (parseInt(currentScore) + parseInt(($(this).val())));
-    console.log(currentScore, "current score")
-})
-
-
-
+    if (currentScore > targetNumber) {
+        console.log('loss')
+    }
 
 });
+// displays currentScore in the DOM 
+$('#current-score').html(currentScore);
+
+
+
+console.log(currentScore, "outside click event");
+});
+
