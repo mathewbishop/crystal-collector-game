@@ -3,3 +3,9 @@
     height: 200px;
 }
 
+#reset-button {
+    position: absolute;
+    z-index: 1;
+    left: 25%;
+    top: 27%;
+}
