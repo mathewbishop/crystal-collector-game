@@ -9,3 +9,15 @@
     left: 25%;
     top: 27%;
 }
+
+#instructions-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#instructions-list {
+    list-style-type: square;
+}
+
+    
