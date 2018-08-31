@@ -6,20 +6,15 @@
 // generate crystal values (random each time)   √
 // assign each crystal a random value each time     √
 // on click, crystal adds value to current score  √
-// if current score === target number, add to wins counter. if >, add to losses counter    
+// if current score === target number, add to wins counter. if >, add to losses counter  √  
 // restart game without refreshing the page, keeps wins and losses totals
 
 
-
-
-
-
-$(document).ready(function() {
 // generate random target number between 19-120
 var targetNumber = Math.floor(Math.random() * 102) + 19;
 // sets the var currentScore to 0
 var currentScore = 0;
-
+// win/loss counters
 var wins = 0;
 var losses = 0;
 
@@ -61,16 +56,17 @@ var whiteCrystal = $('<img>');
     $('#crystals').append(whiteCrystal);
     console.log(whiteCrystal);
 
-// adds crystal value to currentScore by running function addToScore()
+
 $('.crystal-image').on('click', function() {
     currentScore = currentScore + parseInt(($(this).val()));
     $('#current-score').html(currentScore);
     if ((currentScore) > (targetNumber)) {
+        newRound();
         alert('You lose this round');
         losses++;
-        currentScore = 0;
     }    
     if ((currentScore) === (targetNumber)) {
+        newRound();
         alert('You won this round');
         wins++;
     }
@@ -79,9 +75,11 @@ $('.crystal-image').on('click', function() {
     console.log(currentScore, "current score");
 });
 
-
-
-
-
-console.log(currentScore, "outside click event");
-});
+function newRound() {
+    targetNumber = Math.floor(Math.random() * 102) + 19;
+    currentScore = 0;
+    blueCrystal.val(Math.floor(Math.random() * 12) + 1);
+    redCrystal.val(Math.floor(Math.random() * 12) + 1);
+    yellowCrystal.val(Math.floor(Math.random() * 12) + 1);
+    whiteCrystal.val(Math.floor(Math.random() * 12) + 1);
+}
