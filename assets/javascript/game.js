@@ -18,7 +18,10 @@ $(document).ready(function() {
 // generate random target number between 19-120
 var targetNumber = Math.floor(Math.random() * 102) + 19;
 // sets the var currentScore to 0
-var currentScore = 0;    
+var currentScore = 0;
+
+var wins = 0;
+var losses = 0;
 
 console.log(targetNumber, "target number");
 
@@ -64,10 +67,18 @@ $('.crystal-image').on('click', function() {
     $('#current-score').html(currentScore);
     if ((currentScore) > (targetNumber)) {
         alert('You lose this round');
+        losses++;
+        currentScore = 0;
+    }    
+    if ((currentScore) === (targetNumber)) {
+        alert('You won this round');
+        wins++;
     }
+    $('#losses-text').html(losses);
+    $('#wins-text').html(wins);
     console.log(currentScore, "current score");
 });
-// displays currentScore in the DOM 
+
 
 
 
