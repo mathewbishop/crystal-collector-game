@@ -13,31 +13,27 @@ var blueCrystal = $('<img>');
     blueCrystal.attr("id", "blue-crystal");
     blueCrystal.val(Math.floor(Math.random() * 12) + 1);
     $('#crystals').append(blueCrystal);
-    console.log(blueCrystal);
-
+    
 var redCrystal = $('<img>');
     redCrystal.addClass('btn crystal-image');
     redCrystal.attr("src", "assets/images/redcrystal.svg");
     redCrystal.attr("id", "red-crystal");
     redCrystal.val(Math.floor(Math.random() * 12) + 1);
     $('#crystals').append(redCrystal);
-    console.log(redCrystal);
-
+    
 var yellowCrystal = $('<img>');
     yellowCrystal.addClass('btn crystal-image');
     yellowCrystal.attr("src", "assets/images/yellowcrystal.svg");
     yellowCrystal.attr("id", "yellow-crystal");
     yellowCrystal.val(Math.floor(Math.random() * 12) + 1);
     $('#crystals').append(yellowCrystal);
-    console.log(yellowCrystal);
-
+    
 var whiteCrystal = $('<img>');
     whiteCrystal.addClass('btn crystal-image');
     whiteCrystal.attr("src", "assets/images/whitecrystal.svg");
     whiteCrystal.attr("id", "white-crystal");
     whiteCrystal.val(Math.floor(Math.random() * 12) + 1);
     $('#crystals').append(whiteCrystal);
-    console.log(whiteCrystal);
 
 // crystal click    
 $('.crystal-image').on('click', function() {
@@ -58,8 +54,8 @@ $('.crystal-image').on('click', function() {
             
         }
 
-    $('#losses-text').html(losses);
-    $('#wins-text').html(wins);
+    $('#losses-text').html('Rounds Lost: ' + losses);
+    $('#wins-text').html('Rounds Won: ' + wins);
 });
 
 // new round (reset)
