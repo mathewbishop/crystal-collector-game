@@ -1,3 +1,13 @@
+h1 {
+    font-family: 'MedievalSharp', cursive;
+}
+
+body {
+    background: linear-gradient(to bottom, #fff, transparent), url('https://stmed.net/sites/default/files/fantasy-place-wallpapers-28157-3780448.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .crystal-image {
     width: 150px;
     height: 200px;
@@ -20,4 +30,15 @@
     list-style-type: square;
 }
 
+
+li {
+    font-weight: 600;
+}
     
+#flavor-image {
+    /* float: right; */
+    /* width: 40%; */
+    /* height: 30%; */
+    /* position: relative; */
+    /* bottom: 53px; */
+}

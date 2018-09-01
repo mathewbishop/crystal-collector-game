@@ -5,37 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/override.css">
     <title>Crystal Collector</title>
 </head>
 <body>
-    <header>
-        <h1><i class="fas fa-gem ml-2 mr-1"></i>Crystal Collector<i class="fas fa-gem ml-2"></i></h1> 
-    </header>
-    <div id="directions-text"> 
-        <p id="instructions-title">Instructions</p>         
-            <ul id="instructions-list">
-                <li>A random target number will be generated at the start of the game</li>
-                <li>Click on the crystals below to add to your total score</li>
-                <li>Win the game by matching your score to the target number. Don't score greater than the target number or you lose</li>
-                <li>The value of each crystal is hidden until you click on it</li>
-                <li>The target number and the crystal values will change each game</li>
-            </ul>             
-    </div>
-    <div>       <!--container for target number-->
-        <h2 id="target-number"></h2>
-    </div>
-    <div id="wins-losses">  <!--div containing the running total of wins and losses-->
-        <p id="wins-text"></p>
-        <p id="losses-text"></p>
-    </div>
-    <div id="crystals">
-    </div>
-    <h2>Current Score:</h2>
-    <div class="w-25 bg-primary">  <!--div containing current score-->
-        <h2 id="current-score"></h2>
+    <div class="container-fluid">
+        <section class="row">      <!-- row 1 -->
+            <div class="col-12">
+            <header>
+                <h1 class="mt-2"><i class="fas fa-gem ml-2 mr-1"></i>Crystal Collector<i class="fas fa-gem ml-2"></i></h1> 
+                <!-- <img class="" id="flavor-image" src="https://stmed.net/sites/default/files/fantasy-place-wallpapers-28157-3780448.jpg" alt=""> -->
+                <div id="directions-text"> 
+                        <p id="instructions-title">Instructions</p>         
+                            <ul id="instructions-list">
+                                <li>A random target number will be generated at the start of the game</li>
+                                <li>Click on the crystals below to add to your total score</li>
+                                <li>Win the game by matching your score to the target number. Don't score greater than the target number or you lose</li>
+                                <li>The value of each crystal is hidden until you click on it</li>
+                                <li>The target number and the crystal values will change each game</li>
+                            </ul>             
+                    </div>
+            </header>
+        
+            <div>       <!--container for target number-->
+                <h2 id="target-number"></h2>
+            </div>
+            <div id="wins-losses">  <!--div containing the running total of wins and losses-->
+                <p id="wins-text"></p>
+                <p id="losses-text"></p>
+            </div>
+            <div id="crystals">
+            </div>
+            <h2>Current Score:</h2>
+            <div class="w-25">  <!--div containing current score-->
+                <h2 id="current-score"></h2>
+            </div>
+        </div>
+    </section>
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
