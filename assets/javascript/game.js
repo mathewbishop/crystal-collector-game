@@ -54,14 +54,14 @@ $('.crystal-image').on('click', function() {
             
         }
 
-    $('#losses-text').html('Rounds Lost: ' + losses);
-    $('#wins-text').html('Rounds Won: ' + wins);
+    $('#losses-text').html('Failed Orders: ' + losses);
+    $('#wins-text').html('Orders Filled: ' + wins);
 });
 
 // new round (reset)
 function newRound() {
     targetNumber = Math.floor(Math.random() * 102) + 19;
-    $('#target-number').html(targetNumber);  
+    $('#target-number').html("Target Number: " + targetNumber);  
     currentScore = 0;
     $('#current-score').html(currentScore);
     blueCrystal.val(Math.floor(Math.random() * 12) + 1);
