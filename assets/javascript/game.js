@@ -1,6 +1,6 @@
 
 var targetNumber = Math.floor(Math.random() * 102) + 19;
-    $('#target-number').html(targetNumber);
+    $('#target-number').html("Target Number: " + targetNumber);
 var currentScore = 0;
 var wins = 0;
 var losses = 0;
